@@ -1,4 +1,6 @@
 KEYS.txt
+keys.csv
 *~*
 *#*
 *.pyc
+__pycache__
