@@ -76,6 +76,14 @@ def postStatus(s):
 
 ###############################################################################
 # PART 4 -- Word Clouds
+def getTweetsForUser(user):
+    # OR
+    # (user_id=user) if providing user IDs instead
+    return twitter.get_user_timeline(screen_name=user)
+
+
+def getUsersText(user):
+    return map(getText, getTweetsForUser(user))
 
 def join(tweetList):
     """
@@ -87,7 +95,7 @@ def join(tweetList):
         # split w/ no args splits on spaces
         words += text.split()
     return words
-    
+
 def buildCount(words):
     """
     Take in a list of words and return a dictionary or counts
@@ -99,3 +107,7 @@ def buildCount(words):
         else:
             count[word] = 1
     return count
+
+def displayWordCloud(user):
+    # separate this
+    wordcloud.drawCloud(buildCounts(join(getUsersText(user))))
