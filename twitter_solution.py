@@ -90,10 +90,9 @@ def join(tweetList):
     Take in a list of tweets, and output a list of words.
     """
     words = []
-    for tweet in tweetsList:
-        text = getText(tweet)
+    for tweet in tweetList:
         # split w/ no args splits on spaces
-        words += text.split()
+        words += tweet.split()
     return words
 
 def buildCount(words):
@@ -110,4 +109,4 @@ def buildCount(words):
 
 def displayWordCloud(user):
     # separate this
-    wordcloud.drawCloud(buildCounts(join(getUsersText(user))))
+    wordcloud.drawCloud(buildCount(join(getUsersText(user))))
