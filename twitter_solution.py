@@ -28,13 +28,13 @@ twitter.verify_credentials()
 ###############################################################################
 # BASIC FUNCTIONS
 def getText(tweet):
-    return "YOUR CODE HERE"
+    return tweet['text']
 
 def getUser(tweet):
     return tweet['user']
 
 def getTimestamp(tweet):
-    return "YOUR CODE HERE"
+    return tweet['created_at']
 
 def getScreenName(user):
     return user['screen_name']
@@ -49,6 +49,7 @@ def displayTimeline():
     tweets = twitter.get_home_timeline()
     for tweet in tweets:
         print("@" + getScreenName(getUser(tweet)) + ": " + getText(tweet) + "\n")
+        print('\t' + getTimestamp(tweet))
         # Ammend this function to print more interesting properties.
         # Try simply looking at tweet.keys() to see what you have to work with.
 
@@ -65,9 +66,7 @@ def followUser(userID):
     # Fix this function to follow a particular user. To follow someone you need to know their userID
     # The function you need to call is create_friendship() and it has an id
     # parameter
-    
-    # YOUR CODE HERE
-    return
+    twitter.create_friendship(id=userID)
 
 
 ###############################################################################
@@ -82,12 +81,21 @@ def join(tweetList):
     """
     Take in a list of tweets, and output a list of words.
     """
-    # YOUR CODE HERE
-    return
+    words = []
+    for tweet in tweetsList:
+        text = getText(tweet)
+        # split w/ no args splits on spaces
+        words += text.split()
+    return words
     
 def buildCount(words):
     """
     Take in a list of words and return a dictionary or counts
     """
-    # YOUR CODE HERE
-    return
+    count = {}
+    for word in words:
+        if word in count:
+            coount[word] += 1
+        else:
+            count[word] = 1
+    return count
