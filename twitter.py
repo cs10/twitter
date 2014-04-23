@@ -33,11 +33,14 @@ def getText(tweet):
 def getUser(tweet):
     return tweet['user']
 
+def getTimestamp(tweet):
+    return "YOUR CODE HERE"
+
 def getScreenName(user):
     return user['screen_name']
 
-def getTimestamp(tweet):
-    return "YOUR CODE HEREw"
+def getUserID(user):
+    return user['id']
 
 ###############################################################################
 # PART 1 -- Getting A Timeline
@@ -49,14 +52,27 @@ def displayTimeline():
         # Ammend this function to print more interesting properties.
         # Try simply looking at tweet.keys() to see what you have to work with.
 
+###############################################################################
+# PART 2 -- Followers
+def getFollowers():
+    # Returns a dictionary which contains a list of users
+    # This list is pretty ugly, honesty.
+    # Follow the example about make it print a list of
+    # @username
+    return twitter.get_friends_list()['users']
+
+def followUser(userID):
+    # Fix this function to follow a particular user. To follow someone you need to know their userID
+    # The function you need to call is create_friendship() and it has an id
+    # parameter
+    pass
+
+
 
 ###############################################################################
-# PART 2 -- Post a Tweet
+# PART 3 -- Post a Tweet
 def postStatus(s):
     twitter.update_status(status=s)
-
-###############################################################################
-# PART 3 -- Trending Topics
 
 ###############################################################################
 # PART 4 -- Word Clouds
