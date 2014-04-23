@@ -23,9 +23,30 @@ twitter = authenticateTwitter(personal_account, key_number)
 twitter.verify_credentials()
 ###############################################################################
 
+###############################################################################
+# BASIC FUNCTIONS
+def getText(tweet):
+    return "YOUR CODE HERE"
+
+def getUser(tweet):
+    return tweet['user']
+
+def getScreenName(user):
+    return user['screen_name']
+    
+def getTimestamp(tweet):
+    return "YOUR CODE HERE"
 
 ###############################################################################
 # PART 1 -- Getting A Timeline
+# You can get a basic timeline of tweets by calling get_home_timeline
+def displayTimeline():
+    tweets = twitter.get_home_timeline()
+    for tweet in tweets:
+        print("@" + getScreenName(getUser(tweet)) + ": " + getText(tweet) + "\n")
+        # Ammend this function to print more interesting properties.
+        # Try simply looking at tweet.keys() to see what you have to work with.
+
 
 ###############################################################################
 # PART 2 -- Post a Tweet
