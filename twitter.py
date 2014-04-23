@@ -9,6 +9,8 @@ This sets up TODO
 from twython import Twython
 # We've provided this support file to do some of the heavy-lifting for you
 from support import *
+# the wordcloud file for this lab
+import wordcloud
 
 # We have 3 sets of keys setup incase of API limit troubles.
 # If you have a problem with "API limits" try changing this number to 2 or 3.
@@ -33,9 +35,9 @@ def getUser(tweet):
 
 def getScreenName(user):
     return user['screen_name']
-    
+
 def getTimestamp(tweet):
-    return "YOUR CODE HERE"
+    return "YOUR CODE HEREw"
 
 ###############################################################################
 # PART 1 -- Getting A Timeline
