@@ -65,7 +65,7 @@ def followUser(userID):
     # Fix this function to follow a particular user. To follow someone you need to know their userID
     # The function you need to call is create_friendship() and it has an id
     # parameter
-    
+
     # YOUR CODE HERE
     return
 
@@ -84,7 +84,7 @@ def join(tweetList):
     """
     # YOUR CODE HERE
     return
-    
+
 def buildCount(words):
     """
     Take in a list of words and return a dictionary or counts
